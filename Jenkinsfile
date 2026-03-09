@@ -33,7 +33,7 @@ pipeline {
 
         stage('Deploy with Helm') {
             steps {
-                sh 'helm upgrade --install hello-release hello-chart'
+                sh 'helm upgrade --install hello-release ./hello-chart'
             }
         }
     }
