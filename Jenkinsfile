@@ -9,11 +9,7 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Pratik1503/hello-app.git'
-            }
-        }
+       
 
         stage('Build Maven Project') {
             steps {
