@@ -30,13 +30,7 @@ pipeline {
         stage('Docker Login & Push') {
             steps {
                 sh 'echo $DOCKER_HUB_PSW | docker login -u $DOCKER_HUB_USR --password-stdin'
-                sh 'docker build -t lucifer1503/hello-app:latest .'
-                sh 'docker push lucifer1503/hello-app:latest'
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {	
+                sh 'docker build -t $IAMGE_NAME:$IMAGE_TAG .'
                 sh 'docker push $IMAGE_NAME:$IMAGE_TAG'
             }
         }
